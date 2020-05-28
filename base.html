@@ -14,16 +14,21 @@
 
 <div style="width:1800px; margin-top: 150px;">
 
+
 	<div style="float:left; width:300px;">
-		<img src="" style="height:700px; border-radius: 3.5%; margin-left: 50px;" id="card-display1">
+		<img src="" style="height:700px; border-radius: 3.5%; margin-left: 100px; z-index:10;" id="card-display0" onclick="rotate_cards()">
+	</div>
+
+	<div style="float:left; width:300px">
+		<img src="" style="height:700px; border-radius: 3.5%; margin-left: -50px; z-index:20;" id="card-display1" onclick="rotate_cards()">
 	</div>
 
 	<div style="float:left; width:300px;">
-		<img src="done_cards/the_twisted_path.png" style="height:700px; border-radius: 3.5%; margin-left: 200px" id="card-display2">
+		<img src="done_cards/the_twisted_path.png" style="height:700px; border-radius: 3.5%; margin-left: -200px; z-index:30;" id="card-display2" onclick="rotate_cards()">
 	</div>
 
 	<div style="float:left; width:300px;">
-		<img src="done_cards/rix_oathbound.png" style="height:700px; border-radius: 3.5%; margin-left: 350px;" id="card-display">
+		<img src="done_cards/rix_oathbound.png" style="height:700px; border-radius: 3.5%; margin-left: 0px;" id="card-display">
 	</div>
 
 

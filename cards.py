@@ -747,7 +747,7 @@ green_cards.append(snarling_harpy)
 soul_of_spring = Card("Soul of Spring", 3, "spell")
 green_cards.append(soul_of_spring)
 
-spriggan_mischief = Card("Spriggan Mischief", 3, "spell")
+spriggan_mischief = Card("Spriggan Mischief", 3, "spell", related=[transmuted_weapon, squirmified_straps, malchanted_mango])
 green_cards.append(spriggan_mischief)
 
 steal_strength = Card("Steal Strength", 3, "spell")
@@ -1212,8 +1212,8 @@ blue_heroes.append(jmuy_the_wise)
 kanna = Card("Kanna", 0, "hero", related=[diabolic_conclusion, hound_of_war])
 blue_heroes.append(kanna)
 
-#lina = Card("Lina", 0, "hero", related=[light_strike_array, dragon_slave, laguna_blade]) # TODO: fix things...
-#blue_heroes.append(lina)
+lina = Card("Lina", 0, "hero", related=[light_strike_array, dragon_slave, laguna_blade])
+blue_heroes.append(lina)
 
 luna = Card("Luna", 0, "hero", related=[eclipse])
 blue_heroes.append(luna)
@@ -1518,6 +1518,8 @@ for card in ordered_cards:
         card_string += "onclick=\"toggle_card2('" + card.get_image_name() + "', '" + relateds[0].get_image_name() + "');\">\n"
     elif len(relateds) == 2:
         card_string += "onclick=\"toggle_card3('" + card.get_image_name() + "', '" + relateds[0].get_image_name() + "', '" + relateds[1].get_image_name() + "');\">\n"
+    elif len(relateds) == 3:
+        card_string += "onclick=\"toggle_card4('" + card.get_image_name() + "', '" + relateds[0].get_image_name() + "', '" + relateds[1].get_image_name() + "', '" + relateds[2].get_image_name() + "');\">\n"
     else:
         print("Error with card:", card)
         print(relateds)
