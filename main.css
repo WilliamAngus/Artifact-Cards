@@ -486,3 +486,16 @@ body {
 	left: 400px;
 }
 
+
+#card-search {
+	position: absolute;
+	background-color: #181a1b;
+	border: 2px solid #d7ece5;
+	padding-left: 10px;
+	color: #d7ece5;
+	top: 23px;
+	left: 550px;
+	height: 35px;
+	width: 200px;
+}
+
