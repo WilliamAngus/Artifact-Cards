@@ -94,19 +94,35 @@ function rotate_cards() {
 }
 
 
-function add_filter(filter_colour, filter_other) {
+
+
+function add_filter(filter_colour, filter_other, filter_item) {
 	elements = document.getElementsByClassName("card");
 	filters_colours = filter_colour.split(" ");
 	filters_others = filter_other.split(" ");
+	filters_items = filter_item.split(" ");
 	for (var i = 0; i < elements.length; i++) {
 		remove_class(elements[i], "card-show");
-		for (var j = 0; j < filters_colours.length; j++) {
-			if (elements[i].className.indexOf(filters_colours[j]) > -1) {
-				for (var k = 0; k < filters_others.length; k++) {
-					if (elements[i].className.indexOf(filters_others[k]) > -1) {
-						add_class(elements[i], "card-show");
+		add_class(elements[i], "hide");
+		if (!(filter_colour === "" && filter_other === "" && filter_item !== "")) {
+			for (var j = 0; j < filters_colours.length; j++) {
+				if (elements[i].className.indexOf(filters_colours[j]) > -1) {
+					for (var k = 0; k < filters_others.length; k++) {
+						if (elements[i].className.indexOf(filters_others[k]) > -1) {
+							add_class(elements[i], "card-show");
+							remove_class(elements[i], "hide");
+						}
 					}
 				}
+			}
+		}
+		if (filter_item === "") {
+			continue;
+		}
+		for (var j = 0; j < filters_items.length; j++) {
+			if (elements[i].className.indexOf(filters_items[j]) > -1) {
+				add_class(elements[i], "card-show");
+				remove_class(elements[i], "hide");
 			}
 		}
 	}
@@ -115,6 +131,7 @@ function add_filter(filter_colour, filter_other) {
 
 var colours_selected = []
 var selected = []
+var items_selected = []
 
 function toggle_colour(obj, colour) {
 	var c = "colour-".concat(colour)
@@ -127,7 +144,7 @@ function toggle_colour(obj, colour) {
 		add_class(obj, "button-".concat(colour, "-unselected"))
 		remove_class(obj, "button-".concat(colour, "-selected"))
 	}
-	add_filter(colours_selected.join(" "), selected.join(" "));
+	add_filter(colours_selected.join(" "), selected.join(" "), items_selected.join(" "));
 }
 
 
@@ -144,22 +161,22 @@ function toggle_type(obj, kind) {
 		add_class(obj, "button-card-unselected")
 		remove_class(obj, "button-card-selected")
 	}
-	add_filter(colours_selected.join(" "), selected.join(" "));
+	add_filter(colours_selected.join(" "), selected.join(" "), items_selected.join(" "));
 }
 
 
 function toggle_item(obj, kind) {
 	var t = "type-".concat(kind)
-	if (selected.indexOf(t) == -1) {
-		selected.push(t);
+	if (items_selected.indexOf(t) == -1) {
+		items_selected.push(t);
 		remove_class(obj, "button-item-unselected")
 		add_class(obj, "button-item-selected")
 	} else {
-		selected = selected.filter(x => x !== t);
+		items_selected = items_selected.filter(x => x !== t);
 		add_class(obj, "button-item-unselected")
 		remove_class(obj, "button-item-selected")
 	}
-	add_filter(colours_selected.join(" "), selected.join(" "));
+	add_filter(colours_selected.join(" "), selected.join(" "), items_selected.join(" "));
 }
 
 
@@ -178,4 +195,25 @@ function search() {
 	}
 }
 
+
+var undraftable = false
+function toggle_draftable(obj) {
+	if (undraftable) {
+		var elements = document.getElementsByClassName("card-undraftable");
+		for (var i = 0; i < elements.length; i++) {
+			remove_class(elements[i], "card-show-undraftable");
+		}
+		undraftable = false
+		add_class(obj, "button-card-selected")
+		remove_class(obj, "button-card-unselected")
+	} else {
+		var elements = document.getElementsByClassName("card-undraftable");
+		for (var i = 0; i < elements.length; i++) {
+			add_class(elements[i], "card-show-undraftable");
+		}
+		undraftable = true
+		remove_class(obj, "button-card-selected")
+		add_class(obj, "button-card-unselected")
+	}
+}
 

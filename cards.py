@@ -1497,8 +1497,9 @@ ordered_cards += ordered_items
 
 
 for card in ordered_cards:
-    if card.is_deck == False: continue
-    if card in signatures: continue
+    show = True
+    if card.is_deck == False: show = False
+    if card in signatures: show = False
 
     relateds = []
 
@@ -1532,7 +1533,12 @@ for card in ordered_cards:
     else:
         colour = "none"
 
-    card_string += "<div class=\"card card-show colour-" + colour + " type-" + card.kind + "\" "
+    card_string += "<div class=\"card"
+    if show:
+        card_string += " card-show"
+    else:
+        card_string += " card-undraftable card-show"
+    card_string += " colour-" + colour + " type-" + card.kind + "\" "
     if len(relateds) == 0:
         card_string += "onclick=\"toggle_card('" + card.get_image_name() + "');\">\n"
     elif len(relateds) == 1:

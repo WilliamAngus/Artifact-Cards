@@ -132,6 +132,14 @@ body {
 	top: 65px;
 }
 
+.card-undraftable {
+	display: none;
+}
+
+.card-show-undraftable {
+	display: flex;
+}
+
 .hide {
 	display: none;
 }
@@ -451,6 +459,20 @@ body {
 	top: 1px;
 }
 
+
+
+.button-draftable {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 825px;
+	height: 20px;
+	width: 20px;
+}
+
+
 .button-card-unselected {
 	border: 2px solid #5e6668;
 }
@@ -501,5 +523,11 @@ body {
 	left: 550px;
 	height: 35px;
 	width: 200px;
+}
+
+#text-draftable {
+	position: absolute;
+	top: 3px;
+	left: 796px;
 }
 
