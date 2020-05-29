@@ -5,7 +5,7 @@ body {
 
 .card {
 	width: 100%;
-	display: flex;
+	display: none;
 	height: 40px;
 	align-items: center;
 	font-size: 20px;
@@ -13,6 +13,10 @@ body {
 	fill: #d7ece5;
 	margin-top: 1px;
 	user-select: none;
+}
+
+.card-show {
+	display: flex;
 }
 
 
@@ -85,7 +89,8 @@ body {
     filter: gray;
     -webkit-filter: grayscale(100%);
     position: absolute;
-    left: 100px;
+    left: 1050px;
+    top: 100px;
 }
 
 #card-display1 {
@@ -97,17 +102,387 @@ body {
     filter: gray;
     -webkit-filter: grayscale(100%);
     position: absolute;
-    left: 350px;
+    left: 1100px;
+    top: 100px;
 }
 
 #card-display2 {
     position: absolute;
-    left: 600px;
+    left: 1150px;
+    top: 100px;
 }
 
 
 #card-display {
 	position: absolute;
-	left: 900px;
+	left: 50px;
+	top: 100px
+}
+
+.card-browser {
+	position:absolute;
+	left: 500px;
+	top: 100px;
+}
+
+
+#text-shuffle {
+	position:absolute;
+	left: 1120px;
+	top: 65px;
+}
+
+.hide {
+	display: none;
+}
+
+
+#text-credit {
+	position: absolute;
+	top: 65px;
+	left: 140px;
+}
+
+
+.button-colour {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+}
+
+.button-red-selected {
+	background-color: #de0928;
+	top: 40px;
+	left: 100px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-red-unselected {
+	border: 2px solid #de0928;
+	top: 40px;
+	left: 100px;
+	height: 20px;
+	width: 20px;
+}
+
+
+.button-blue-selected {
+	background-color: #2b9ce0;
+	top: 40px;
+	left: 125px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-blue-unselected {
+	border: 2px solid #2b9ce0;
+	top: 40px;
+	left: 125px;
+	height: 20px;
+	width: 20px;
+}
+
+
+
+.button-black-selected {
+	background-color: #605d6b;
+	top: 40px;
+	left: 150px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-black-unselected {
+	border: 2px solid #605d6b;
+	top: 40px;
+	left: 150px;
+	height: 20px;
+	width: 20px;
+}
+
+
+.button-green-selected {
+	background-color: #73ba59;
+	top: 40px;
+	left: 175px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-green-unselected {
+	border: 2px solid #73ba59;
+	top: 40px;
+	left: 175px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-neutral-selected {
+	background-color: #a8b9bd;
+	top: 40px;
+	left: 75px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-neutral-unselected {
+	border: 2px solid #a8b9bd;
+	top: 40px;
+	left: 75px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-hero {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 250px;
+	height: 20px;
+	width: 20px;
+}
+
+
+.button-creep {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 275px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-spell {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 300px;
+	height: 20px;
+	width: 20px;
+}
+
+.button-improvement {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 325px;
+	height: 20px;
+	width: 20px;
+}
+
+
+.button-hero.button-card-unselected svg {
+	fill: #d7ece5;
+	width: 13px;
+	position: relative;
+	left: -6px;
+}
+
+.button-hero.button-card-selected svg {
+	fill: #d7ece5;
+	width: 13px;
+	position: relative;
+	left: -4px;
+	top: 2px;
+}
+
+
+.button-creep.button-card-unselected svg {
+	fill: #d7ece5;
+	width: 13px;
+	position: relative;
+	left: -6px;
+}
+
+.button-creep.button-card-selected svg {
+	fill: #d7ece5;
+	width: 13px;
+	position: relative;
+	left: -4px;
+	top: 1px;
+}
+
+.button-spell.button-card-unselected svg {
+	fill: #d7ece5;
+	width: 21px;
+	position: relative;
+	top: -3px;
+	left: -10px;
+}
+
+.button-spell.button-card-selected svg {
+	fill: #d7ece5;
+	width: 21px;
+	position: relative;
+	top: -1px;
+	left: -8px;
+}
+.button-improvement.button-card-unselected svg {
+	fill: #d7ece5;
+	width: 13px;
+	position: relative;
+	left: -6px;
+}
+
+.button-improvement.button-card-selected svg {
+	fill: #d7ece5;
+	width: 13px;
+	position: relative;
+	left: -4px;
+	top: 1px;
+}
+
+
+
+
+.button-consumable {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 400px;
+	height: 20px;
+	width: 20px;
+}
+.button-weapon {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 425px;
+	height: 20px;
+	width: 20px;
+}
+.button-armor {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 450px;
+	height: 20px;
+	width: 20px;
+}
+.button-accessory {
+	background-color: #181a1b;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+	top: 40px;
+	left: 475px;
+	height: 20px;
+	width: 20px;
+}
+
+
+.button-consumable.button-item-unselected svg {
+	fill: #d7ece5;
+	width: 20px;
+	position: relative;
+	left: -10px;
+	top: -2px;
+}
+
+.button-consumable.button-item-selected svg {
+	fill: #d7ece5;
+	width: 20px;
+	position: relative;
+	left: -8px;
+}
+
+
+.button-weapon.button-item-unselected svg {
+	fill: #d7ece5;
+	width: 16px;
+	position: relative;
+	left: -8px;
+}
+
+.button-weapon.button-item-selected svg {
+	fill: #d7ece5;
+	width: 16px;
+	position: relative;
+	left: -6px;
+	top: 2px;
+}
+.button-armor.button-item-unselected svg {
+	fill: #d7ece5;
+	width: 16px;
+	position: relative;
+	left: -8px;
+}
+
+.button-armor.button-item-selected svg {
+	fill: #d7ece5;
+	width: 16px;
+	position: relative;
+	left: -6px;
+	top: 2px;
+}
+.button-accessory.button-item-unselected svg {
+	fill: #d7ece5;
+	width: 19px;
+	position: relative;
+	left: -9px;
+	top: -1px;
+}
+
+.button-accessory.button-item-selected svg {
+	fill: #d7ece5;
+	width: 19px;
+	position: relative;
+	left: -7px;
+	top: 1px;
+}
+
+.button-card-unselected {
+	border: 2px solid #5e6668;
+}
+
+.button-card-selected {
+	background-color: #5e6668;
+
+}
+
+.button-item-unselected {
+	border: 2px solid #6d5f1e;
+}
+
+
+.button-item-selected {
+	background-color: #6d5f1e;
+}
+
+
+
+#text-colour {
+	position: absolute;
+	top: 3px;
+	left: 75px;
+}
+
+
+#text-type {
+	position: absolute;
+	top: 3px;
+	left: 250px;
+}
+
+#text-item {
+	position: absolute;
+	top: 3px;
+	left: 400px;
 }
 

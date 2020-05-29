@@ -1511,7 +1511,7 @@ for card in ordered_cards:
     else:
         colour = "none"
 
-    card_string += "<div class=\"card colour-" + colour + " type-" + card.kind + "\" "
+    card_string += "<div class=\"card card-show colour-" + colour + " type-" + card.kind + "\" "
     if len(relateds) == 0:
         card_string += "onclick=\"toggle_card('" + card.get_image_name() + "');\">\n"
     elif len(relateds) == 1:
