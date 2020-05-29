@@ -531,3 +531,32 @@ body {
 	left: 796px;
 }
 
+
+@media only screen
+and (max-width: 1600px) {
+	#card-display0 {
+	    position: absolute;
+	    left: 250px;
+	    top: 850px;
+	}
+
+	#card-display1 {
+	    position: absolute;
+	    left: 300px;
+	    top: 850px;
+	}
+
+	#card-display2 {
+	    position: absolute;
+	    left: 350px;
+	    top: 850px;
+	}
+
+	#text-shuffle {
+		position:absolute;
+		left: 320px;
+		top: 810px;
+	}
+
+}
+
