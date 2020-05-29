@@ -86,7 +86,7 @@ item_cards.append(midas_greaves)
 phase_boots = Card("Phase Boots", 10, "accessory")
 item_cards.append(phase_boots)
 
-revtel_mercenary_contract = Card("Revtel Mercenary Contract", 10, "consumable") # TODO: add Revtel Mercenary
+revtel_mercenary_contract = Card("Revtel Mercenary Contract", 10, "consumable")
 item_cards.append(revtel_mercenary_contract)
 
 ring_of_basilius = Card("Ring of Basilius", 10, "armor")
@@ -111,7 +111,7 @@ item_cards.append(broadsword)
 cloak_of_endless_carnage = Card("Cloak of Endless Carnage", 15, "accessory")
 item_cards.append(cloak_of_endless_carnage)
 
-crown_of_the_undying = Card("Crown of the Undying", 15, "armor")            # TODO: add zombie
+crown_of_the_undying = Card("Crown of the Undying", 15, "armor")
 item_cards.append(crown_of_the_undying)
 
 golden_ticket = Card("Golden Ticket", 15, "consumable")
@@ -243,6 +243,8 @@ green_signatures = []
 black_heroes = []
 green_heroes = []
 
+arc_remnant = Card("Arc Remnant", 2, "creep", is_deck=False)
+
 hound_of_war = Card("Hound of War", 1, "creep", is_deck=False)
 black_cards.append(hound_of_war)
 
@@ -278,6 +280,18 @@ neutral_cards.append(mega_creep)
 melee_creep = Card("Melee Creep", 1, "creep", is_deck=False)
 neutral_cards.append(melee_creep)
 
+revtel_mercenary = Card("Revtel Mercenary", 2, "creep", is_deck=False)
+neutral_cards.append(revtel_mercenary)
+revtel_mercenary_contract.related_cards = [revtel_mercenary]
+
+zombie = Card("Zombie", 1, "creep", is_deck=False)
+neutral_cards.append(zombie)
+crown_of_the_undying.related_cards = [zombie]
+
+sheep = Card("Sheep", 0, "creep", is_deck=False)
+neutral_cards.append(sheep)
+sheep_stick.related_cards = [sheep]
+
 
 the_twisted_path = Card("The Twisted Path", 3, "improvement")
 neutral_signatures = [the_twisted_path]
@@ -287,6 +301,7 @@ neutral_heroes = [rix_oathbound]
 
 naked_greevil = Card("Naked Greevil", 1, "creep")
 neutral_cards.append(naked_greevil)
+
 
 neutral_cards = neutral_heroes + neutral_signatures + neutral_cards
 
@@ -422,7 +437,7 @@ trebuchets = Card("Trebuchets", 1, "improvement")
 black_cards.append(trebuchets)
 
 
-arclight_elemental = Card("Arclight Elemental", 2, "creep")     # TODO: add arc remnant
+arclight_elemental = Card("Arclight Elemental", 2, "creep", related=[arc_remnant])
 black_cards.append(arclight_elemental)
 
 assassins_apprentice = Card("Assassin's Apprentice", 2, "creep")
@@ -555,6 +570,9 @@ black_cards = black_heroes + black_signatures + black_cards
 
 corrosive_breath = Card("Corrosive Breath", 4, "improvement", is_deck=False)
 green_cards.append(corrosive_breath)
+
+ozkavosh_horror = Card("Ozkavosh Horror", 1, "creep", is_deck=False)
+green_cards.append(ozkavosh_horror)
 
 terrapin_greatshell = Card("Terrapin Greatshell", 3, "creep", is_deck=False)
 green_cards.append(terrapin_greatshell)
@@ -753,7 +771,7 @@ green_cards.append(spriggan_mischief)
 steal_strength = Card("Steal Strength", 3, "spell")
 green_cards.append(steal_strength)
 
-summoning_circle = Card("Summoning Circle", 3, "improvement")           # TODO: add Ozkavosh Horror
+summoning_circle = Card("Summoning Circle", 3, "improvement", related=[ozkavosh_horror])
 green_cards.append(summoning_circle)
 
 
@@ -853,6 +871,9 @@ red_unplayables.append(ice_shard)
 
 loyal_beast = Card("Loyal Beast", 2, "creep", is_deck=False)
 red_unplayables.append(loyal_beast)
+
+roused_rabble = Card("Roused Rabble", 1, "creep", is_deck=False)
+red_unplayables.append(roused_rabble)
 
 stonehall_paragon = Card("Stonehall Paragon", 4, "creep", is_deck=False)
 red_unplayables.append(stonehall_paragon)
@@ -1053,7 +1074,7 @@ red_cards.append(punch_it)
 raze = Card("Raze", 4, "spell")
 red_cards.append(raze)
 
-rebel_rabble_rouser = Card("Rebel Rabble Rouser", 4, "creep")                   # TODO: missing Roused Rabble!
+rebel_rabble_rouser = Card("Rebel Rabble Rouser", 4, "creep", related=[roused_rabble])
 red_cards.append(rebel_rabble_rouser)
 
 spirit_swordsman = Card("Spirit Swordsman", 4, "creep")
@@ -1300,7 +1321,7 @@ blue_cards.append(path_of_the_wise)
 possessed_blade = Card("Possessed Blade", 2, "creep") # TODO: add short sword
 blue_cards.append(possessed_blade)
 
-relentless_zombie = Card("Relentless Zombie", 2, "creep") # TODO: add zombie
+relentless_zombie = Card("Relentless Zombie", 2, "creep", related=[zombie])
 blue_cards.append(relentless_zombie)
 
 tower_barrage = Card("Tower Barrage", 2, "spell")
