@@ -171,9 +171,9 @@ function search() {
 	for (var i = 0; i < elements.length; i++) {
 		var t  = elements[i].getElementsByClassName("name")[0].textContent;
 		if (t.toUpperCase().indexOf(text) > -1) {
-			elements[i].style.display = "flex";
+			remove_class(elements[i], "hide-search")
 		} else {
-			elements[i].style.display = "none";
+			add_class(elements[i], "hide-search")
 		}
 	}
 }

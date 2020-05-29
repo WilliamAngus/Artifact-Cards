@@ -136,6 +136,10 @@ body {
 	display: none;
 }
 
+.hide-search {
+	display: none;
+}
+
 
 #text-credit {
 	position: absolute;
