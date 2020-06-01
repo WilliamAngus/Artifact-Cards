@@ -239,9 +239,14 @@ function show_keywords(obj) {
 	text = "";
 	l = obj.getElementsByClassName("keywords")[0].className.replace("keywords ", "").split(" ");
 	for (var i = 0; i < l.length; i++) {
+		if (l[i] == "give") {
+			l[i] = "gain";
+		}
 		o = document.getElementById("keyword" + l[i]);
 		if (!!o) {
 			text = text.concat("<p><b>", l[i].replace("-", " "), ":</b> ", o.innerHTML, "</p>");
+		} else {
+			console.log(l[i]);
 		}
 	}
 	document.getElementById("keyword-holder-inner").innerHTML = text;
