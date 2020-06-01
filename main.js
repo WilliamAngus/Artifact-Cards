@@ -240,7 +240,9 @@ function show_keywords(obj) {
 	l = obj.getElementsByClassName("keywords")[0].className.replace("keywords ", "").split(" ");
 	for (var i = 0; i < l.length; i++) {
 		o = document.getElementById("keyword" + l[i]);
-		text = text.concat("<p><b>", l[i].replace("-", " "), ":</b> ", o.innerHTML, "</p>");
+		if (!!o) {
+			text = text.concat("<p><b>", l[i].replace("-", " "), ":</b> ", o.innerHTML, "</p>");
+		}
 	}
 	document.getElementById("keyword-holder-inner").innerHTML = text;
 }
