@@ -1,6 +1,7 @@
 body {
 	background-color: #181a1b;
 	color: #d7ece5;
+	font-family: "Radiance";
 }
 
 .card {
@@ -531,6 +532,14 @@ body {
 	left: 796px;
 }
 
+#keyword-holder {
+	position: absolute;
+	left: 50px;
+	top: 800px;
+	margin-right: 30px;
+	padding-bottom: 30px;
+}
+
 
 @media only screen
 and (max-width: 1600px) {
@@ -558,5 +567,10 @@ and (max-width: 1600px) {
 		top: 810px;
 	}
 
+	#keyword-holder {
+		display: none;
+	}
+
 }
+
 

@@ -20,7 +20,9 @@ function remove_class(element, name) {
 	element.className = classes.join(" ");
 }
 
-function toggle_card(name) {
+function toggle_card(obj, name) {
+	show_lore(obj)
+	show_keywords(obj);
 	var image_loc = document.getElementById("card-display");
 	image_loc.src = "done_cards/".concat(name, ".png");
 	image_loc = document.getElementById("card-display2");
@@ -34,7 +36,9 @@ function toggle_card(name) {
 }
 
 
-function toggle_card2(name1, name2) {
+function toggle_card2(obj, name1, name2) {
+	show_lore(obj)
+	show_keywords(obj);
 	var image_loc = document.getElementById("card-display");
 	image_loc.src = "done_cards/".concat(name1, ".png");
 	image_loc = document.getElementById("card-display2");
@@ -47,7 +51,9 @@ function toggle_card2(name1, name2) {
 }
 
 
-function toggle_card3(name1, name2, name3) {
+function toggle_card3(obj, name1, name2, name3) {
+	show_lore(obj)
+	show_keywords(obj);
 	var image_loc = document.getElementById("card-display");
 	image_loc.src = "done_cards/".concat(name1, ".png");
 	image_loc = document.getElementById("card-display2");
@@ -60,7 +66,9 @@ function toggle_card3(name1, name2, name3) {
 }
 
 
-function toggle_card4(name1, name2, name3, name4) {
+function toggle_card4(obj, name1, name2, name3, name4) {
+	show_lore(obj)
+	show_keywords(obj);
 	var image_loc = document.getElementById("card-display");
 	image_loc.src = "done_cards/".concat(name1, ".png");
 	image_loc = document.getElementById("card-display2");
@@ -190,7 +198,12 @@ function search() {
 		if (t.toUpperCase().indexOf(text) > -1) {
 			remove_class(elements[i], "hide-search")
 		} else {
-			add_class(elements[i], "hide-search")
+			var t  = elements[i].getElementsByClassName("keywords")[0].className.replace("keywords", "");
+			if (t.toUpperCase().indexOf(text.replace(/\s+/g, '-')) > -1) {
+				remove_class(elements[i], "hide-search")
+			} else {
+				add_class(elements[i], "hide-search")
+			}
 		}
 	}
 }
@@ -215,5 +228,20 @@ function toggle_draftable(obj) {
 		remove_class(obj, "button-card-selected")
 		add_class(obj, "button-card-unselected")
 	}
+}
+
+function show_lore(obj) {
+	document.getElementById("lore-display").innerHTML = obj.getElementsByClassName("lore")[0].innerHTML;
+}
+
+
+function show_keywords(obj) {
+	text = "";
+	l = obj.getElementsByClassName("keywords")[0].className.replace("keywords ", "").split(" ");
+	for (var i = 0; i < l.length; i++) {
+		o = document.getElementById("keyword" + l[i]);
+		text = text.concat("<p><b>", l[i].replace("-", " "), ":</b> ", o.innerHTML, "</p>");
+	}
+	document.getElementById("keyword-holder-inner").innerHTML = text;
 }
 
